@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuiceTip-API", "JuiceTip-API\JuiceTip-API.csproj", "{90867BCA-5B2D-455D-A142-9A02582990AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90867BCA-5B2D-455D-A142-9A02582990AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90867BCA-5B2D-455D-A142-9A02582990AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90867BCA-5B2D-455D-A142-9A02582990AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90867BCA-5B2D-455D-A142-9A02582990AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20F48FB2-F5B7-4C40-A0D3-1517FB5293D4}
+	EndGlobalSection
+EndGlobal
