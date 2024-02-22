@@ -41,7 +41,7 @@ namespace JuiceTip_API.Helper
             return otpNumber.ToString();
         }
 
-        public string SendOTPEmail(string name, string email)
+        public string SendOTPEmail([FromBody] OTP user)
         {
             try
             {
@@ -60,11 +60,11 @@ namespace JuiceTip_API.Helper
                 {
                     From = new MailAddress(sender),
                     Subject = "OTP Verification",
-                    Body = $"Hello, {name}!<br/><br/>Your JuiceTip Apps OTP code is <b>{otp}</b><br/>Beware of Fraud! This code is only for you to enter in JuiceTip Apps.<br/>Don't give your OTP code to anyone, including JuiceTip.<br/>Ignore this email if you feel like you didn't make the OTP request.<br/>",
+                    Body = $"Hello, {user.Name}!<br/><br/>Your JuiceTip Apps OTP code is <b>{otp}</b><br/>Beware of Fraud! This code is only for you to enter in JuiceTip Apps.<br/>Don't give your OTP code to anyone, including JuiceTip.<br/>Ignore this email if you feel like you didn't make the OTP request.<br/>",
                     IsBodyHtml = true
                 };
 
-                mailMessage.To.Add(email);
+                mailMessage.To.Add(user.Email);
                 smtpClient.Send(mailMessage);
 
                 return otp;

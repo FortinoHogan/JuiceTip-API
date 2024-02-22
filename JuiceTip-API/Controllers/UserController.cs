@@ -35,12 +35,12 @@ namespace JuiceTip_API.Controllers
 
         [HttpPost("generate-otp")]
         [Produces("application/json")]
-        public async Task<IActionResult> GenerateOTP([FromBody] RegisterRequest user)
+        public async Task<IActionResult> GenerateOTP([FromBody] OTP user)
         {
             try
             {
-                var otp = userHelper.SendOTPEmail(user.FirstName, user.Email);
-                OTP.otp = otp;
+                var otp = userHelper.SendOTPEmail(user);
+                OTP.Otp = otp;
                 return new OkObjectResult("Success Send OTP");
             }
             catch (Exception ex)
@@ -55,7 +55,7 @@ namespace JuiceTip_API.Controllers
         {
             try
             {
-                if (OTP.otp == user.Otp)
+                if (OTP.Otp == user.Otp)
                 {
                     var objJSON = new UserOutput();
                     objJSON.payload = userHelper.UpsertUser(user);
