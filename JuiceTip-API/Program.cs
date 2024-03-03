@@ -15,6 +15,7 @@ builder.Services.AddDbContext<JuiceTipDBContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection"))
 );
 builder.Services.AddScoped<UserHelper>();
+builder.Services.AddScoped<RegionHelper>();
 
 builder.Services.AddControllers();
 
