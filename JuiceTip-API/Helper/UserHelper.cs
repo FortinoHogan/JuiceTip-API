@@ -89,6 +89,10 @@ namespace JuiceTip_API.Helper
                         LastName = user.LastName,
                         Address = user.Address,
                         Telephone = user.Telephone,
+                        ProfileImage = null,
+                        JuiceCoin = 0,
+                        Created = DateTime.Now,
+                        DOB = user.DOB
                     };
 
                     _dbContext.MsUser.Add(newUser);
