@@ -18,6 +18,8 @@ namespace JuiceTip_API.Data
         public string Telephone { get; set; }
         [Required]
         public DateTime DOB { get; set; }
+        [Required]
+        public string Gender { get; set; }
         public string? Otp { get; set; }
     }
 }

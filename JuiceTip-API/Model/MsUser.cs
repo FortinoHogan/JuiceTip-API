@@ -12,9 +12,11 @@ namespace JuiceTip_API.Model
         public string LastName { get; set; }
         public string Address { get; set; }
         public string Telephone { get; set; }
-        public string ProfileImage { get; set; }
-        public int JuiceCoin { get; set; }
+        public string? ProfileImage { get; set; }
+        public string Gender { get; set; }
+        public double JuiceCoin { get; set; }
         public DateTime Created { get; set; }
         public DateTime DOB { get; set; }
+        public Guid? ReviewId { get; set; }
     }
 }

@@ -1,0 +1,38 @@
+﻿using JuiceTip_API.Data;
+using JuiceTip_API.Helper;
+using JuiceTip_API.Output;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace JuiceTip_API.Controllers
+{
+    [EnableCors]
+    [ApiController]
+    [Route("product")]
+    public class ProductController : Controller
+    {
+        private ProductHelper productHelper;
+        public ProductController(ProductHelper productHelper)
+        {
+            this.productHelper = productHelper;
+        }
+
+        [HttpPost("upsert")]
+        [Produces("application/json")]
+        public async Task<IActionResult> AddProduct([FromBody] ProductRequest product)
+        {
+            try
+            {
+                var objJSON = new ProductOutput();
+                objJSON.payload = productHelper.UpsertProduct(product);
+                return new OkObjectResult(objJSON);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+    }
+}

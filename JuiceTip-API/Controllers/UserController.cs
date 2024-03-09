@@ -25,7 +25,12 @@ namespace JuiceTip_API.Controllers
             {
                 var objJSON = new UserOutput();
                 objJSON.payload = userHelper.GetUser(user);
-                return new OkObjectResult(objJSON);
+
+                if(objJSON.payload != null)
+                {
+                    return new OkObjectResult(objJSON);
+                }
+                return BadRequest("Wrong Credential.");
             }
             catch (Exception ex)
             { 
@@ -57,9 +62,13 @@ namespace JuiceTip_API.Controllers
             {
                 if (OTP.Otp == user.Otp)
                 {
-                    var objJSON = new UserOutput();
-                    objJSON.payload = userHelper.UpsertUser(user);
-                    return new OkObjectResult(objJSON);
+                    if(userHelper.CheckDuplicateEmail(user) == null)
+                    {
+                        var objJSON = new UserOutput();
+                        objJSON.payload = userHelper.InsertUser(user);
+                        return new OkObjectResult(objJSON);
+                    }
+                    return BadRequest("Email address already in use");
                 }
                 return BadRequest("OTP is not valid");
             }

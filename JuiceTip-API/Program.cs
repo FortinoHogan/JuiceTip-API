@@ -16,6 +16,7 @@ builder.Services.AddDbContext<JuiceTipDBContext>(
 );
 builder.Services.AddScoped<UserHelper>();
 builder.Services.AddScoped<RegionHelper>();
+builder.Services.AddScoped<ProductHelper>();
 
 builder.Services.AddControllers();
 

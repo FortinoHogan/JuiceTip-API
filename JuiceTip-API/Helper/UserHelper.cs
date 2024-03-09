@@ -75,12 +75,25 @@ namespace JuiceTip_API.Helper
             }
         }
 
-        public MsUser UpsertUser([FromBody] RegisterRequest user)
+        public MsUser CheckDuplicateEmail([FromBody] RegisterRequest user)
+        {
+            var duplicateUser = _dbContext.MsUser.Where(x => x.Email == user.Email).FirstOrDefault();
+
+            if (duplicateUser != null)
+            {
+                return duplicateUser;
+            }
+
+            return null;
+        }
+
+        public MsUser InsertUser([FromBody] RegisterRequest user)
         {
             try
             {
                 if (user != null)
                 {
+
                     var newUser = new MsUser
                     {
                         Email = user.Email,
@@ -89,6 +102,7 @@ namespace JuiceTip_API.Helper
                         LastName = user.LastName,
                         Address = user.Address,
                         Telephone = user.Telephone,
+                        Gender = user.Gender,
                         ProfileImage = null,
                         JuiceCoin = 0,
                         Created = DateTime.Now,
