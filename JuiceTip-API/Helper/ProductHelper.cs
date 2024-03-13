@@ -33,6 +33,19 @@ namespace JuiceTip_API.Helper
             return newCategory.CategoryId;
         }
 
+        public List<MsProduct> GetProducts()
+        {
+            try
+            {
+                var allData = _dbContext.MsProduct.ToList();
+                return allData;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public MsProduct GetCurrentProduct(ProductRequest product)
         {
             var currentProduct = _dbContext.MsProduct.Where(x => x.ProductId == product.ProductId).FirstOrDefault();
