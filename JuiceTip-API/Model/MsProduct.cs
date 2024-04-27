@@ -14,5 +14,7 @@ namespace JuiceTip_API.Model
         public Guid RegionId { get; set; }
         public Guid CustomerId { get; set; }
         public string Notes { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime LastUpdatedAt { get; set; }
     }
 }

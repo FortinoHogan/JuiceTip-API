@@ -70,7 +70,6 @@ C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\staticwebasse
 C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\staticwebassets.build.json
 C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\staticwebassets.development.json
 C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\scopedcss\bundle\JuiceTip-API.styles.css
-C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\JuiceTip-API.csproj.CopyComplete
 C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\JuiceTip-API.dll
 C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\refint\JuiceTip-API.dll
 C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\JuiceTip-API.pdb
@@ -228,3 +227,5 @@ C:\Univ\Semester4\Software Engineering\AoL\JuiceTip-API\JuiceTip-API\obj\Debug\n
 C:\Univ\Semester4\Software Engineering\AoL\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\JuiceTip-API.pdb
 C:\Univ\Semester4\Software Engineering\AoL\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\JuiceTip-API.genruntimeconfig.cache
 C:\Univ\Semester4\Software Engineering\AoL\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\ref\JuiceTip-API.dll
+C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\JuiceTip-API.sourcelink.json
+C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\JuiceTip.14DF4C04.Up2Date

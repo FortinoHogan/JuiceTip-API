@@ -1,6 +1,8 @@
 ﻿using JuiceTip_API.Data;
 using JuiceTip_API.Model;
+using JuiceTip_API.Output;
 using Microsoft.AspNetCore.Mvc;
+using static JuiceTip_API.Output.AllProductOutput;
 
 namespace JuiceTip_API.Helper
 {
@@ -33,11 +35,36 @@ namespace JuiceTip_API.Helper
             return newCategory.CategoryId;
         }
 
-        public List<MsProduct> GetProducts()
+        public List<AllProductModel> GetProducts()
         {
             try
             {
-                var allData = _dbContext.MsProduct.ToList();
+                var allData = (from product in _dbContext.MsProduct
+                                  join user in _dbContext.MsUser
+                                  on product.CustomerId equals user.UserId
+
+                                  join region in _dbContext.MsRegion
+                                  on product.RegionId equals region.RegionId
+
+                                  join category in _dbContext.MsCategory
+                                  on product.CategoryId equals category.CategoryId
+                                  select new AllProductModel
+                                  {
+                                      ProductId = product.ProductId,
+                                      ProductImage = product.ProductImage,
+                                      ProductName = product.ProductName,
+                                      ProductDescription = product.ProductDescription,
+                                      ProductPrice = product.ProductPrice,
+                                      CategoryId = product.CategoryId,
+                                      CategoryName = category.Category,
+                                      RegionId = product.RegionId,
+                                      RegionName = region.Region,
+                                      CustomerId = product.CategoryId,
+                                      CustomerName = user.FirstName + " " + user.LastName,
+                                      Notes = product.Notes,
+                                      CreatedAt = product.CreatedAt,
+                                      LastUpdatedAt = product.LastUpdatedAt
+                                  }).ToList();
                 return allData;
             }
             catch (Exception ex)
@@ -80,6 +107,7 @@ namespace JuiceTip_API.Helper
                     currentProduct.CustomerId = product.CustomerId;
                     currentProduct.RegionId = product.RegionId;
                     currentProduct.Notes = product.Notes;
+                    currentProduct.LastUpdatedAt = DateTime.Now;
                     _dbContext.SaveChanges();
 
                     return currentProduct;
@@ -99,7 +127,9 @@ namespace JuiceTip_API.Helper
                             CategoryId = product.CategoryId,
                             CustomerId = product.CustomerId,
                             RegionId = product.RegionId,
-                            Notes = product.Notes
+                            Notes = product.Notes,
+                            CreatedAt = DateTime.Now,
+                            LastUpdatedAt = DateTime.Now
                         };
 
                         _dbContext.MsProduct.Add(newProduct);
