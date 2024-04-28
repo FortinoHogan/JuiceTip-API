@@ -5,6 +5,7 @@ using System.Net.Mail;
 using System.Net;
 using Microsoft.Extensions.Configuration;
 using static System.Net.WebRequestMethods;
+using static JuiceTip_API.Output.CustomerOutput;
 
 namespace JuiceTip_API.Helper
 {
@@ -114,6 +115,31 @@ namespace JuiceTip_API.Helper
 
                     return newUser;
                 }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public CustomerModel GetUserById([FromBody] UserRequest user)
+        {
+            try
+            {
+                var data = (from customer in _dbContext.MsUser
+                            where customer.UserId == user.UserId
+                            select new CustomerModel
+                            {
+                                UserId = customer.UserId,
+                                Email = customer.Email,
+                                FirstName = customer.FirstName,
+                                LastName = customer.LastName,
+                                ProfileImage = customer.ProfileImage
+                            }).ToList().FirstOrDefault();
+
+                if (data != null) return data;
+
                 return null;
             }
             catch (Exception ex)

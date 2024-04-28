@@ -59,7 +59,7 @@ namespace JuiceTip_API.Helper
                                       CategoryName = category.Category,
                                       RegionId = product.RegionId,
                                       RegionName = region.Region,
-                                      CustomerId = product.CategoryId,
+                                      CustomerId = user.UserId,
                                       CustomerName = user.FirstName + " " + user.LastName,
                                       Notes = product.Notes,
                                       CreatedAt = product.CreatedAt,
