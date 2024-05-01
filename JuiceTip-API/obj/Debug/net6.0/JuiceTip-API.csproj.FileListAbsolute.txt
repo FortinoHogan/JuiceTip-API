@@ -229,3 +229,4 @@ C:\Univ\Semester4\Software Engineering\AoL\JuiceTip-API\JuiceTip-API\obj\Debug\n
 C:\Univ\Semester4\Software Engineering\AoL\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\ref\JuiceTip-API.dll
 C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\JuiceTip-API.sourcelink.json
 C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\obj\Debug\net6.0\JuiceTip.14DF4C04.Up2Date
+C:\ProgramApps\JuiceTip\JuiceTip-API\JuiceTip-API\bin\Debug\net6.0\Newtonsoft.Json.dll

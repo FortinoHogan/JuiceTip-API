@@ -2,6 +2,10 @@
 using JuiceTip_API.Model;
 using JuiceTip_API.Output;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using static JuiceTip_API.Output.AllProductOutput;
 
 namespace JuiceTip_API.Helper
@@ -99,6 +103,7 @@ namespace JuiceTip_API.Helper
 
                 if(currentProduct != null)
                 {
+                    currentProduct.ProductId = product.ProductId;
                     currentProduct.ProductImage = product.ProductImage;
                     currentProduct.ProductName = product.ProductName;
                     currentProduct.ProductDescription = product.ProductDescription;
@@ -120,6 +125,7 @@ namespace JuiceTip_API.Helper
                     {
                         var newProduct = new MsProduct
                         {
+                            ProductId = product.ProductId,
                             ProductImage = product.ProductImage,
                             ProductName = product.ProductName,
                             ProductDescription = product.ProductDescription,

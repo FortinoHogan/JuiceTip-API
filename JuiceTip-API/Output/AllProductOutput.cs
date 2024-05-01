@@ -8,7 +8,18 @@ namespace JuiceTip_API.Output
         public class AllProductModel
         {
             public Guid ProductId { get; set; }
-            public string ProductImage { get; set; }
+            public List<string> ProductImageList { get; set; }
+            public string ProductImage
+            {
+                get
+                {
+                    return "[\"" + string.Join("\",\"", ProductImageList) + "\"]";
+                }
+                set
+                {
+                    ProductImageList = value.Split(new char[] { '[', ',', ']' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                }
+            }
             public string ProductName { get; set; }
             public string ProductDescription { get; set; }
             public double ProductPrice { get; set; }
