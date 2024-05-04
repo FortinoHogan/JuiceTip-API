@@ -50,5 +50,21 @@ namespace JuiceTip_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost("id")]
+        [Produces("application/json")]
+        public async Task<IActionResult> Product([FromBody] ProductByIdRequest product)
+        {
+            try
+            {
+                var objJSON = new ProductByIdOutput();
+                objJSON.payload = productHelper.GetProductById(product);
+                return new OkObjectResult(objJSON);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

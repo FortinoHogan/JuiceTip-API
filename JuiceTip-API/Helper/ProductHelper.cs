@@ -39,6 +39,38 @@ namespace JuiceTip_API.Helper
             return newCategory.CategoryId;
         }
 
+        public AllProductModel GetProductById([FromBody] ProductByIdRequest product) 
+        {
+            var data = (from products in _dbContext.MsProduct.Where(x => x.ProductId == product.ProductId)
+                        join user in _dbContext.MsUser
+                        on products.CustomerId equals user.UserId
+
+                        join region in _dbContext.MsRegion
+                        on products.RegionId equals region.RegionId
+
+                        join category in _dbContext.MsCategory
+                        on products.CategoryId equals category.CategoryId
+                        select new AllProductModel
+                        {
+                            ProductId = products.ProductId,
+                            ProductImage = products.ProductImage,
+                            ProductName = products.ProductName,
+                            ProductDescription = products.ProductDescription,
+                            ProductPrice = products.ProductPrice,
+                            CategoryId = products.CategoryId,
+                            CategoryName = category.Category,
+                            RegionId = products.RegionId,
+                            RegionName = region.Region,
+                            CustomerId = user.UserId,
+                            CustomerName = user.FirstName + " " + user.LastName,
+                            Notes = products.Notes,
+                            CreatedAt = products.CreatedAt,
+                            LastUpdatedAt = products.LastUpdatedAt
+                        }).FirstOrDefault();
+
+            return data;
+        }
+
         public List<AllProductModel> GetProducts()
         {
             try
