@@ -39,6 +39,26 @@ namespace JuiceTip_API.Helper
             return newCategory.CategoryId;
         }
 
+        public StatusOutput DeleteProductById(Guid productId)
+        {
+            var returnValue = new StatusOutput();
+            var product = _dbContext.MsProduct.Where(x => x.ProductId == productId).FirstOrDefault();
+            
+            if (product == null)
+            {
+                returnValue.statusCode = 404;
+                returnValue.message = "Product not found";
+                return returnValue;
+            }
+
+            _dbContext.MsProduct.Remove(product);
+            _dbContext.SaveChanges();
+
+            returnValue.statusCode = 200;
+            returnValue.message = "Product deleted";
+            return returnValue;
+        }
+
         public AllProductModel GetProductById([FromBody] ProductByIdRequest product) 
         {
             var data = (from products in _dbContext.MsProduct.Where(x => x.ProductId == product.ProductId)

@@ -66,5 +66,21 @@ namespace JuiceTip_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost("delete")]
+        [Produces("application/json")]
+        public async Task<IActionResult> DeleteProduct([FromBody] ProductByIdRequest product)
+        {
+            try
+            {
+                var objJSON = new StatusOutput();
+                objJSON = productHelper.DeleteProductById(product.ProductId);
+                return new OkObjectResult(objJSON);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
