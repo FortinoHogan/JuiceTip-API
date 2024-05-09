@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using static JuiceTip_API.Output.AllProductOutput;
+using Microsoft.IdentityModel.Tokens;
 
 namespace JuiceTip_API.Helper
 {
@@ -95,32 +96,33 @@ namespace JuiceTip_API.Helper
         {
             try
             {
-                var allData = (from product in _dbContext.MsProduct
-                                  join user in _dbContext.MsUser
-                                  on product.CustomerId equals user.UserId
+                var allData = (from product in _dbContext.MsProduct.Where(x => x.TransactionId == null)
+                               join user in _dbContext.MsUser
+                               on product.CustomerId equals user.UserId
 
-                                  join region in _dbContext.MsRegion
-                                  on product.RegionId equals region.RegionId
+                               join region in _dbContext.MsRegion
+                               on product.RegionId equals region.RegionId
 
-                                  join category in _dbContext.MsCategory
-                                  on product.CategoryId equals category.CategoryId
-                                  select new AllProductModel
-                                  {
-                                      ProductId = product.ProductId,
-                                      ProductImage = product.ProductImage,
-                                      ProductName = product.ProductName,
-                                      ProductDescription = product.ProductDescription,
-                                      ProductPrice = product.ProductPrice,
-                                      CategoryId = product.CategoryId,
-                                      CategoryName = category.Category,
-                                      RegionId = product.RegionId,
-                                      RegionName = region.Region,
-                                      CustomerId = user.UserId,
-                                      CustomerName = user.FirstName + " " + user.LastName,
-                                      Notes = product.Notes,
-                                      CreatedAt = product.CreatedAt,
-                                      LastUpdatedAt = product.LastUpdatedAt
-                                  }).ToList();
+                               join category in _dbContext.MsCategory
+                               on product.CategoryId equals category.CategoryId
+
+                               select new AllProductModel
+                               {
+                                   ProductId = product.ProductId,
+                                   ProductImage = product.ProductImage,
+                                   ProductName = product.ProductName,
+                                   ProductDescription = product.ProductDescription,
+                                   ProductPrice = product.ProductPrice,
+                                   CategoryId = product.CategoryId,
+                                   CategoryName = category.Category,
+                                   RegionId = product.RegionId,
+                                   RegionName = region.Region,
+                                   CustomerId = user.UserId,
+                                   CustomerName = user.FirstName + " " + user.LastName,
+                                   Notes = product.Notes,
+                                   CreatedAt = product.CreatedAt,
+                                   LastUpdatedAt = product.LastUpdatedAt
+                               }).ToList();
                 return allData;
             }
             catch (Exception ex)

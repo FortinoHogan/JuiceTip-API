@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JuiceTip-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce121ce780523e8fbac520411cd59a9c2e72b736")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+532dde4cb42cbf760046e7ceb417b6fe975196d0")]
 [assembly: System.Reflection.AssemblyProductAttribute("JuiceTip-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JuiceTip-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
