@@ -6,6 +6,7 @@ using System.Net;
 using Microsoft.Extensions.Configuration;
 using static System.Net.WebRequestMethods;
 using static JuiceTip_API.Output.CustomerOutput;
+using JuiceTip_API.Output;
 
 namespace JuiceTip_API.Helper
 {
@@ -116,6 +117,30 @@ namespace JuiceTip_API.Helper
                     return newUser;
                 }
                 return null;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public MsUser TopUp([FromBody] TopUpRequest user)
+        {
+            try
+            {
+                var currUser = _dbContext.MsUser.Where(x => x.UserId == user.UserId).FirstOrDefault();
+                
+                if (currUser != null)
+                {
+                    currUser.JuiceCoin = currUser.JuiceCoin + user.JuiceCoin;
+
+                    _dbContext.Update(currUser);
+                    _dbContext.SaveChanges();
+
+                    return currUser;
+                }
+                return null;
+
             }
             catch (Exception ex)
             {
