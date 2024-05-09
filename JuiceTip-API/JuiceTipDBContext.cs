@@ -9,6 +9,7 @@ namespace JuiceTip_API
         public DbSet<MsRegion> MsRegion { get; set; }
         public DbSet<MsProduct> MsProduct { get; set; }
         public DbSet<MsCategory> MsCategory { get; set; }
+        public DbSet<TransactionDetail> TransactionDetail { get; set; }
         public JuiceTipDBContext(DbContextOptions<JuiceTipDBContext> options) : base(options) { }
     }
 }
