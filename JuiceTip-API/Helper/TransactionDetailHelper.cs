@@ -49,8 +49,7 @@ namespace JuiceTip_API.Helper
                     ApplicationFee = transactionDetail.ApplicationFee,
                     JustiperId = transactionDetail.JustiperId,
                     ProductId = transactionDetail.ProductId,
-                    Qty = transactionDetail.Qty,
-                    SubtotalPrice = transactionDetail.SubtotalPrice,
+                    SubtotalPayment = transactionDetail.SubtotalPayment,
                     SubtotalProduct = transactionDetail.SubtotalProduct,
                     TransactionStatus = transactionDetail.TransactionStatus
                 };
