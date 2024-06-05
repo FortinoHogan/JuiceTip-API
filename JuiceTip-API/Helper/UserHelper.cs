@@ -148,6 +148,30 @@ namespace JuiceTip_API.Helper
             }
         }
 
+        public MsUser DecreaseBalance([FromBody] TopUpRequest user)
+        {
+            try
+            {
+                var currUser = _dbContext.MsUser.Where(x => x.UserId == user.UserId).FirstOrDefault();
+
+                if (currUser != null)
+                {
+                    currUser.JuiceCoin = currUser.JuiceCoin - user.JuiceCoin;
+
+                    _dbContext.Update(currUser);
+                    _dbContext.SaveChanges();
+
+                    return currUser;
+                }
+                return null;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public CustomerModel GetUserById([FromBody] UserRequest user)
         {
             try

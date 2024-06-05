@@ -120,5 +120,27 @@ namespace JuiceTip_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost("decrease-balance")]
+        [Produces("application/json")]
+        public async Task<IActionResult> DecreaseBalance([FromBody] TopUpRequest user)
+        {
+            try
+            {
+                var objJSON = new UserOutput();
+                objJSON.payload = userHelper.DecreaseBalance(user);
+
+                if (objJSON.payload != null)
+                {
+                    return new OkObjectResult(objJSON);
+                }
+
+                return BadRequest("Wrong UserId.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
