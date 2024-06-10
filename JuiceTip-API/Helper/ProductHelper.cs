@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using static JuiceTip_API.Output.AllProductOutput;
 using Microsoft.IdentityModel.Tokens;
+using static JuiceTip_API.Output.ProductProgressOutput;
 
 namespace JuiceTip_API.Helper
 {
@@ -147,6 +148,42 @@ namespace JuiceTip_API.Helper
             if (duplicateProduct != null) return duplicateProduct;
 
             return null;
+        }
+
+        public List<ProductProgressModel> GetAllProductProgress([FromBody] UserRequest user)
+        {
+            var data = (from product in _dbContext.MsProduct.Where(x => x.CustomerId == user.UserId && x.TransactionId != null)
+                        join transaction in _dbContext.TransactionDetail
+                        on product.TransactionId equals transaction.TransactionId
+
+                        join region in _dbContext.MsRegion
+                        on product.RegionId equals region.RegionId
+
+                        join category in _dbContext.MsCategory
+                        on product.CategoryId equals category.CategoryId
+
+                        join usr in _dbContext.MsUser
+                        on transaction.JustiperId equals usr.UserId
+
+                        select new ProductProgressModel
+                        {
+                            ProductId = product.ProductId,
+                            ProductImage = product.ProductImage,
+                            ProductName = product.ProductName,
+                            ProductDescription = product.ProductDescription,
+                            ProductPrice = product.ProductPrice,
+                            CategoryId = product.CategoryId,
+                            CategoryName = category.Category,
+                            RegionId = product.RegionId,
+                            RegionName = region.Region,
+                            Notes = product.Notes,
+                            CreatedAt = product.CreatedAt,
+                            LastUpdatedAt = product.LastUpdatedAt,
+                            JustiperName = usr.FirstName + " " + usr.LastName,
+                            Status = transaction.TransactionStatus
+                        }).ToList();
+
+            return data;
         }
 
         public MsProduct UpsertProduct([FromBody] ProductRequest product)
