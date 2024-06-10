@@ -56,3 +56,13 @@ The objectives of the "JuiceTip: Your Entrustment Service Solution" project are 
 
 # Features & Tech ⚙️
 ![Technology](https://github.com/stevenaruu/JuiceTip-API/assets/102864512/b90c25f6-ce25-4e81-8acb-c5d28190e3e2)
+
+<p align='center'>
+  <b>Follow us here 🌿</b><br>  
+  <a href="https://github.com/ivanadriannn">Ivan Adrian</a> |
+  <a href="https://github.com/stevenaruu/stevenaruu">Steven</a> |
+  <a href="https://github.com/FortinoHogan/FortinoHogan">Fortino Hogan Hadiprodjo</a> |
+  <a href="https://github.com/Ryldi">Reynaldi Adidarma</a> |
+  <a href="https://github.com/StephenEpen">Stephen</a><br><br>
+  Don't forget to look our repository ⭐
+</p>
