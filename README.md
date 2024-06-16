@@ -60,6 +60,10 @@ The objectives of the "JuiceTip: Your Entrustment Service Solution" project are 
 # Features & Tech ⚙️
 ![Technology](https://github.com/stevenaruu/JuiceTip-API/assets/102864512/b90c25f6-ce25-4e81-8acb-c5d28190e3e2)
 
+# Reference 🔗
+- Justip - Juragan Jasa Titip
+- https://jastip.com/
+
 <p align='center'>
   <b>Follow us here 🌿</b><br>  
   <a href="https://github.com/ivanadriannn">Ivan Adrian</a> |
