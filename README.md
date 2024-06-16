@@ -13,6 +13,7 @@ User:
 - As a jastiper (User who can take order the product added by the customer)
 
 <a href="https://steady-tire-616.notion.site/JuiceTip-b1f4cafbab674b6cad294d3e6702ea87?pvs=4">Access Our Documentation</a>
+<a href="https://trello.com/b/y6XH6H5f/juicetip">Access Our Project Management Execution</a>
 
 # Documentations
 ## User Website Preview
