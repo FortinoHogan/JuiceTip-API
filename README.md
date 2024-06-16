@@ -54,6 +54,9 @@ The objectives of the "JuiceTip: Your Entrustment Service Solution" project are 
 ### Filter Product by Search
 ![SearchProduct](https://github.com/stevenaruu/JuiceTip-API/assets/102864512/8b3f82db-ae53-4f76-9cfc-f1321e8a8869)
 
+# Team Documentation
+![Documentation](https://github.com/stevenaruu/JuiceTip-API/assets/102864512/3b0345d8-a937-4b01-9e80-d94462cd2e18)
+
 # Features & Tech ⚙️
 ![Technology](https://github.com/stevenaruu/JuiceTip-API/assets/102864512/b90c25f6-ce25-4e81-8acb-c5d28190e3e2)
 
