@@ -7,6 +7,11 @@ JuiceTip is a user-friendly web-based platform to facilitate **international ent
 ### Objectives
 The objectives of the "JuiceTip: Your Entrustment Service Solution" project are to develop a user-friendly web-based platform to facilitate international entrustment services. The platform aims to simplify the process of entrusting goods by providing a secure and efficient environment for users to search, order, and send items from various locations around the world. 
 
+### Stakeholder
+User:
+a) As a customer (User who can make an order to the jastiper)
+b) As a jastiper (User who can take order the product added by the customer)
+
 <a href="https://steady-tire-616.notion.site/JuiceTip-b1f4cafbab674b6cad294d3e6702ea87?pvs=4">Access Our Documentation</a>
 
 # Documentations
