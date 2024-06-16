@@ -15,6 +15,9 @@ User:
 <a href="https://steady-tire-616.notion.site/JuiceTip-b1f4cafbab674b6cad294d3e6702ea87?pvs=4">Access Our Documentation</a>
 <a href="https://trello.com/b/y6XH6H5f/juicetip">Access Our Project Management Execution</a>
 
+### Entity Relation Diagram
+![ERD](https://github.com/stevenaruu/JuiceTip-API/assets/102864512/63313145-d557-4ff4-905d-8d1084579978)
+
 # Documentations
 ## User Website Preview
 ### Login Page
