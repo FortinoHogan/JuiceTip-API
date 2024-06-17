@@ -18,6 +18,7 @@ builder.Services.AddScoped<UserHelper>();
 builder.Services.AddScoped<RegionHelper>();
 builder.Services.AddScoped<ProductHelper>();
 builder.Services.AddScoped<CategoryHelper>();
+builder.Services.AddScoped<RatingHelper>();
 builder.Services.AddScoped<TransactionDetailHelper>();
 
 builder.Services.AddControllers();
