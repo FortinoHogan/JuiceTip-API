@@ -2,6 +2,7 @@
 using JuiceTip_API.Model;
 using JuiceTip_API.Output;
 using Microsoft.AspNetCore.Mvc;
+using static JuiceTip_API.Output.ReviewOutput;
 
 namespace JuiceTip_API.Helper
 {
@@ -35,6 +36,34 @@ namespace JuiceTip_API.Helper
                 returnValue.statusCode = 200;
                 returnValue.message = "Success insert review";
                 return returnValue;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<ReviewModel> UserRating([FromBody] UserRequest user)
+        {
+            try
+            {
+                var data = (from usr in _dbContext.TrReview.Where(x => x.UserId == user.UserId)
+
+                            join pep in _dbContext.MsUser
+                            on usr.UserId equals pep.UserId
+
+                            join rating in _dbContext.MsRating
+                            on usr.RatingId equals rating.RatingId
+
+                            select new ReviewModel
+                            {
+                                CustomerName = pep.FirstName + " " + pep.LastName,
+                                Rating = rating.Rating,
+                                Comment = usr.Comment,
+                                ReviewDate = usr.ReviewDate
+                            }).ToList();
+                    
+                return data;
             }
             catch (Exception ex)
             {

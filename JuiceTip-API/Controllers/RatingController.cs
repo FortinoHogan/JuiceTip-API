@@ -18,6 +18,22 @@ namespace JuiceTip_API.Controllers
             this.ratingHelper = ratingHelper;
         }
 
+        [HttpPost("user")]
+        [Produces("application/json")]
+        public async Task<IActionResult> UserRating([FromBody] UserRequest user)
+        {
+            try
+            {
+                var objJSON = new ReviewOutput();
+                objJSON.payload = ratingHelper.UserRating(user);
+                return new OkObjectResult(objJSON);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost("insert")]
         [Produces("application/json")]
         public async Task<IActionResult> InsertRating([FromBody] RatingRequest rating)
