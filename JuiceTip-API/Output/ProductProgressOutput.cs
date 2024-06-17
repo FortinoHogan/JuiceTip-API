@@ -31,6 +31,7 @@ namespace JuiceTip_API.Output
             public DateTime CreatedAt { get; set; }
             public DateTime LastUpdatedAt { get; set; }
             public Guid? TransactionId { get; set; }
+            public Guid JustiperId { get; set; }
             public string JustiperName { get; set; }
             public string Status { get; set; }
         }

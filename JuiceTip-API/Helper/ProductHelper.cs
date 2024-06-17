@@ -179,6 +179,7 @@ namespace JuiceTip_API.Helper
                             Notes = product.Notes,
                             CreatedAt = product.CreatedAt,
                             LastUpdatedAt = product.LastUpdatedAt,
+                            JustiperId = usr.UserId,
                             JustiperName = usr.FirstName + " " + usr.LastName,
                             Status = transaction.TransactionStatus
                         }).ToList();

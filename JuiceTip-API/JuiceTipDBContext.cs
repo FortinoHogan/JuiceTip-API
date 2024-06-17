@@ -10,6 +10,8 @@ namespace JuiceTip_API
         public DbSet<MsProduct> MsProduct { get; set; }
         public DbSet<MsCategory> MsCategory { get; set; }
         public DbSet<TransactionDetail> TransactionDetail { get; set; }
+        public DbSet<MsRating> MsRating { get; set; }
+        public DbSet<TrReview> TrReview { get; set; }
         public JuiceTipDBContext(DbContextOptions<JuiceTipDBContext> options) : base(options) { }
     }
 }
