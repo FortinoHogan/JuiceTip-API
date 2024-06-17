@@ -50,7 +50,7 @@ namespace JuiceTip_API.Helper
                 var data = (from usr in _dbContext.TrReview.Where(x => x.UserId == user.UserId)
 
                             join pep in _dbContext.MsUser
-                            on usr.UserId equals pep.UserId
+                            on usr.CustomerId equals pep.UserId
 
                             join rating in _dbContext.MsRating
                             on usr.RatingId equals rating.RatingId
