@@ -72,6 +72,10 @@ User:
 ![CompleteTransaction](https://github.com/stevenaruu/JuiceTip-FE/assets/102864512/e370694a-169e-429b-a693-1c89f28ffc32)
 ### Complete Transaction Success
 ![CompleteTransactionSuccess](https://github.com/stevenaruu/JuiceTip-FE/assets/102864512/926ea704-7bfd-4b2c-a47d-2538c9e91208)
+### Complaint Page
+![ComplaintPage](https://github.com/stevenaruu/JuiceTip-FE/assets/102864512/c5c0cbd2-45eb-4dac-a2f1-8955dc537169)
+### Rating and Comment
+![Rating Comment](https://github.com/stevenaruu/JuiceTip-FE/assets/102864512/3563a85c-f946-4674-8787-125a9e6be33f)
 
 # Team Documentation
 ![Documentation](https://github.com/stevenaruu/JuiceTip-API/assets/102864512/3b0345d8-a937-4b01-9e80-d94462cd2e18)
