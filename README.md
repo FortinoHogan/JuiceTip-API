@@ -16,7 +16,7 @@ User:
 <a href="https://trello.com/b/y6XH6H5f/juicetip">Access Our Project Management Execution</a>
 
 ### Entity Relation Diagram
-![ERD](https://github.com/stevenaruu/JuiceTip-API/assets/102864512/63313145-d557-4ff4-905d-8d1084579978)
+![Erd](https://github.com/stevenaruu/JuiceTip-FE/assets/102864512/4a28f1c4-ff48-4a47-93aa-7cdadfe4eb57)
 
 # Documentations
 ## User Website Preview
