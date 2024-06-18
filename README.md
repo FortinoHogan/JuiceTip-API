@@ -64,6 +64,10 @@ User:
 ![SearchProduct](https://github.com/stevenaruu/JuiceTip-API/assets/102864512/8b3f82db-ae53-4f76-9cfc-f1321e8a8869)
 ### Filter not Found Any Product
 ![FilterNotFound](https://github.com/stevenaruu/JuiceTip-FE/assets/102864512/df87e81b-aa63-490a-9850-90c0280a5b86)
+### Chat Page
+![ChatPage](https://github.com/stevenaruu/JuiceTip-FE/assets/102864512/4fe338a1-1c54-466a-b3f6-0d5c823eec8e)
+### Finish Product
+![Finish Product](https://github.com/stevenaruu/JuiceTip-FE/assets/102864512/07107ee1-0592-4302-a819-ed57a114869b)
 
 # Team Documentation
 ![Documentation](https://github.com/stevenaruu/JuiceTip-API/assets/102864512/3b0345d8-a937-4b01-9e80-d94462cd2e18)
